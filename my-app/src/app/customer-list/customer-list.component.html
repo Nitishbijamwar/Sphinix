@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <h2>Customer List</h2>
+  <a class="btn btn-primary mb-3" routerLink="/add-customer">Add Customer</a>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let customer of customers">
+      {{ customer.name }} ({{ customer.email }})
+      <button class="btn btn-danger btn-sm ms-2" (click)="deleteCustomer(customer.id)">Delete</button>
+      <a class="btn btn-primary btn-sm ms-2" [routerLink]="['/edit-customer', customer.id]">Edit</a>
+    </li>
+  </ul>
+</div>
